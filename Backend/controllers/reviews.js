@@ -83,7 +83,7 @@ exports.updateReview = asyncHandler(async (req, res, next) => {
     // Make sure review belong to user or user is admin
     if (review.user.toString() !== req.user.id && req.user.role !== "admin") {
         return next(
-            new ErrorResponse(`No authorize to update this review!`, 401)
+            new ErrorResponse(`No authorized to update this review!`, 401)
         );
     }
 
@@ -113,7 +113,7 @@ exports.deleteReview = asyncHandler(async (req, res, next) => {
     // Make sure review belong to user or user is admin
     if (review.user.toString() !== req.user.id && req.user.role !== "admin") {
         return next(
-            new ErrorResponse(`No authorize to update this review!`, 401)
+            new ErrorResponse(`No authorized to update this review!`, 401)
         );
     }
 
